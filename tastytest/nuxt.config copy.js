@@ -36,17 +36,17 @@ export default {
 
   // ⚡️++ 💩 ?
   //    @see    https://github.com/harlan-zw/nuxt-webpack-optimisations#usage
-  // webpackOptimisations: {
-  //   features: {
-  //     debug: true,
+  webpackOptimisations: {
+    features: {
+      debug: true,
       
-  //     // enable risky optimisations in dev only
-  //     // hardSourcePlugin: process.env.NODE_ENV === 'development',
-  //     // parallelPlugin: process.env.NODE_ENV === 'development',
-  //     hardSourcePlugin: true,
-  //     parallelPlugin: true,
-  //   }
-  // },
+      // enable risky optimisations in dev only
+      // hardSourcePlugin: process.env.NODE_ENV === 'development',
+      // parallelPlugin: process.env.NODE_ENV === 'development',
+      hardSourcePlugin: true,
+      parallelPlugin: true,
+    }
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -57,34 +57,10 @@ export default {
     // ✅🐛 Refresh inline css
     //          🚨 extractCSS cannot work with parallel build due to limited work pool in thread-loader
     // extractCSS: true,
-
+    
     // ⚡️++ 
     hardSource: true,
-    // parallel: true,
-
-    // ⚡️
-    html: {
-      minify: {
-        collapseBooleanAttributes: true,
-        decodeEntities: true,
-        minifyCSS: false,
-        minifyJS: false,
-        processConditionalComments: true,
-        removeEmptyAttributes: true,
-        removeRedundantAttributes: true,
-        trimCustomFragments: true,
-        useShortDoctype: true
-      }
-    },
-    cssSourceMap: false,
-
-    // @see   https://stackoverflow.com/a/56351280
-    loaders:  {
-      vue: {
-        prettify: false
-      }
-    }
-  
+    parallel: true,
   },
 
   // ✅🐛 HMR KO w. WSL2

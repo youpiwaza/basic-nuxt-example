@@ -15,7 +15,14 @@
     "vue-server-renderer": "^2.7.10",
     "vue-template-compiler": "^2.7.10"
   },
-  "devDependencies": {
-    "nuxt-webpack-optimisations": "^2.2.8"
+  "devDependencies": {},
+
+
+
+  "config": {
+    "nuxt": {
+      "host": "0.0.0.0",
+      "port": "3000"
+    }
   }
 }
