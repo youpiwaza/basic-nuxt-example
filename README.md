@@ -1,0 +1,2 @@
+# basic-nuxt-example
+hey
