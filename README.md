@@ -413,12 +413,37 @@ HMR 150 - 250 & browser nope
 [bof](https://nuxt.com/docs/api/commands/cleanup)
 
 ```bash
-rm -R .nuxt && rm -R .output && rm -R node_modules/.vite && rm -R node_modules/.cache
+rm -rf .nuxt && rm -rf .output && rm -rf node_modules/.vite && rm -rf node_modules/.cache
 ```
 
 build 18h29m45 > 18h30m44 > 1mn
 
 🐬🐬🐬🐬🐬 HMR 100ms > BROWSER IDEM YAYYYYYYYYYY Joie & félicité sur le monde 🐬🐬🐬🐬🐬🐬
+
+## 🕐 Final benchs
+
+1. 🕐 De base > 27 s for manager and 1.47 (90s) min for preview ; HMR 2000 - 2200 ms
+2. Passer 1 par 1 & check si KO, y compris HMR
+3. ✅ Package nuxt-webpack-optimisations
+   1. ⚡️ 22 s for manager and 1.47 min for preview ; HMR ~ < 2 secondes
+4. ~💩 hardSource
+   1. ⚡️ Wow 4.46 s for manager and 20 s for preview ; 💩 Mais HMR ~ 3 secondes
+5. ✅ parallel
+   1. 20 s for manager and 1.4 min for preview ; ⚡️ HMR 1558 ms
+6. ✅ virer html minify
+   1. 21 s for manager and 1.43 min for preview ; ⚡️ HMR 1600 - 1800 ms
+7. ✅ csssourcemap
+   1. 21 s for manager and ⚡️1.27 min for preview ; ⚡️ HMR 1500 - 1600
+8. ✅ extractCSS: false
+   1. 21 s for manager and 1.38 min for preview ; ⚡️ HMR 1600
+9. ✅ loaders.vue.prettify: false
+   1. 21 s for manager and ⚡️ 1.33 min for preview ; ⚡️ HMR 1500
+10. ~⚡️💩 Tout
+    1. 4.49 s for manager and 1.4 min for preview ; 💩 Mais HMR ~ 3 secondes
+11. ✅⚡️ Tout sans hardsource
+    1. 20 s for manager and 1.37 min for preview ; HMR 1500
+
+🕐 build 2mn > **~1m40** ; HMR ~2200 ms > **moins de 1500 ms**
 
 ### 🔒️ Sensible informations
 
